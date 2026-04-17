@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Fantasy Worlds Ranked — A Reader's Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6275817706281066" crossorigin="anonymous"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-deep: #0a0613;
+    --bg-mid: #14102a;
+    --bg-card: #1a1330;
+    --gold: #d4af37;
+    --gold-bright: #f5d76e;
+    --crimson: #7a1f2b;
+    --parchment: #e8dcc4;
+    --text-soft: #b8a888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--parchment);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Starry night background */
+  .stars, .stars2, .stars3 {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .stars {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+      radial-gradient(1px 1px at 40px 70px, #fff, transparent),
+      radial-gradient(1px 1px at 50px 160px, var(--gold-bright), transparent),
+      radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+      radial-gradient(2px 2px at 160px 120px, var(--gold-bright), transparent);
+    background-size: 200px 200px;
+    animation: twinkle 4s infinite;
+  }
+  .stars2 {
+    background-image:
+      radial-gradient(1px 1px at 25px 50px, #fff, transparent),
+      radial-gradient(1px 1px at 75px 95px, var(--gold-bright), transparent),
+      radial-gradient(2px 2px at 125px 25px, #fff, transparent),
+      radial-gradient(1px 1px at 175px 175px, #fff, transparent);
+    background-size: 250px 250px;
+    animation: twinkle 6s infinite reverse;
+    opacity: 0.6;
+  }
+  .stars3 {
+    background-image:
+      radial-gradient(1px 1px at 60px 110px, var(--gold), transparent),
+      radial-gradient(1px 1px at 140px 50px, #fff, transparent);
+    background-size: 300px 300px;
+    animation: twinkle 8s infinite;
+    opacity: 0.4;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* Floating embers */
+  .ember {
+    position: fixed;
+    bottom: -10px;
+    width: 4px; height: 4px;
+    background: var(--gold-bright);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold-bright), 0 0 16px var(--gold);
+    pointer-events: none;
+    z-index: 1;
+    animation: rise linear infinite;
+  }
+  @keyframes rise {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-110vh) translateX(40px); opacity: 0; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    background:
+      radial-gradient(ellipse at center, rgba(122, 31, 43, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+  }
+
+  .hero-tag {
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--gold);
+    letter-spacing: 0.4em;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1.5s 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    line-height: 1;
+    background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 50%, #8b6914 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp 1.5s 0.6s forwards;
+    max-width: 1100px;
+  }
+
+  .hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--text-soft);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1.5s 0.9s forwards;
+  }
+
+  .crest {
+    width: 80px; height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 2rem 0;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1.5s 1.2s forwards;
+  }
+  .crest::before, .crest::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+  .crest::before { height: 80px; top: -90px; left: 50%; }
+  .crest::after { height: 80px; bottom: -90px; left: 50%; }
+  .crest-icon {
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--gold);
+    font-size: 2rem;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    animation: fadeUp 2s 1.8s forwards, bob 2s 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* Section divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem auto;
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+  .divider-icon {
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--gold);
+    font-size: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  /* Intro section */
+  .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .intro h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+  .intro p {
+    font-size: 1.25rem;
+    color: var(--text-soft);
+    font-style: italic;
+  }
+
+  /* Worlds */
+  .worlds {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .world {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 8rem;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .world.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .world:nth-child(even) {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .world:nth-child(even) .world-card { order: 2; }
+
+  .world-card {
+    aspect-ratio: 2/3;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 30px 80px rgba(0,0,0,0.8),
+      0 0 60px rgba(212, 175, 55, 0.15);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+  .world-card:hover {
+    transform: translateY(-8px) rotateZ(-1deg);
+    box-shadow:
+      0 0 0 1px var(--gold-bright),
+      0 40px 100px rgba(0,0,0,0.9),
+      0 0 80px rgba(212, 175, 55, 0.35);
+  }
+
+  .card-art {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .card-art .rank {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold-bright);
+    font-size: 4rem;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  }
+  .card-art .symbol {
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-bright);
+    line-height: 1;
+  }
+  .card-art .card-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold-bright);
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+  }
+  .card-art .card-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--parchment);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  /* Distinct cards */
+  .card-1 { background: radial-gradient(circle at 50% 40%, #2a4d1a 0%, #0d1f0a 100%); }
+  .card-2 { background: radial-gradient(circle at 50% 40%, #3a1a4d 0%, #15081f 100%); }
+  .card-3 { background: radial-gradient(circle at 50% 40%, #4d3a1a 0%, #1f1408 100%); }
+  .card-4 { background: radial-gradient(circle at 50% 40%, #4d1a1a 0%, #1f0808 100%); }
+  .card-5 { background: radial-gradient(circle at 50% 40%, #1a3a4d 0%, #08151f 100%); }
+  .card-6 { background: radial-gradient(circle at 50% 40%, #1a4d3a 0%, #081f15 100%); }
+  .card-7 { background: radial-gradient(circle at 50% 40%, #4d2a1a 0%, #1f1108 100%); }
+  .card-8 { background: radial-gradient(circle at 50% 40%, #1a1a4d 0%, #08081f 100%); }
+  .card-9 { background: radial-gradient(circle at 50% 40%, #4d1a3a 0%, #1f0815 100%); }
+  .card-10 { background: radial-gradient(circle at 50% 40%, #0d0d0d 0%, #000 100%); }
+
+  .world-info .world-rank {
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+  .world-info h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--gold-bright);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .world-info .meta {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    flex-wrap: wrap;
+  }
+  .world-info p {
+    font-size: 1.15rem;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .world-info .quote {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--gold);
+    font-style: italic;
+    color: var(--parchment);
+    font-size: 1.05rem;
+  }
+
+  /* Criteria */
+  .criteria-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  .criteria-section h2 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--gold-bright);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .criteria-section .subtitle {
+    text-align: center;
+    color: var(--text-soft);
+    font-style: italic;
+    margin-bottom: 3.5rem;
+    font-size: 1.2rem;
+  }
+  .criteria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .criterion {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: rgba(20, 16, 42, 0.6);
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: default;
+  }
+  .criterion:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+  }
+  .criterion .symbol {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: var(--gold-bright);
+  }
+  .criterion h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-bright);
+  }
+  .criterion p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  /* Stats */
+  .stats {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+  }
+  .stats h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-bright);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3rem;
+  }
+  .stat .num {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  }
+  .stat .label {
+    margin-top: 0.75rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--text-soft);
+    text-transform: uppercase;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 4rem;
+  }
+  footer .closing {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-bright);
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+  }
+  footer .author-line {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  footer .small {
+    margin-top: 2rem;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .world, .world:nth-child(even) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .world:nth-child(even) .world-card { order: 0; }
+    .world-card { max-width: 280px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<!-- Embers -->
+<div id="embers"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">A Reader's Atlas</div>
+  <h1>Best Fantasy Worlds Ranked</h1>
+  <h2>"Fantasy is hardly an escape from reality. It's a way of understanding it." — Lloyd Alexander</h2>
+  <div class="crest"><span class="crest-icon">⚯</span></div>
+  <div class="scroll-cue">Scroll to begin ✦</div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <h3>Ten Realms. One Definitive Ranking.</h3>
+  <p>From hobbit-trodden hills to icy walls beyond civilization, we journey through the ten greatest fantasy worlds ever imagined — ranked by their depth, originality, and the spell they cast upon every reader who enters.</p>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">⚜</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- Ad: first -->
+<div style="max-width:1100px;margin:2rem auto;padding:0 2rem;position:relative;z-index:2;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6275817706281066"
+       data-ad-slot="2169564038"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- WORLDS -->
+<section class="worlds">
+
+  <!-- 1 -->
+  <article class="world">
+    <div class="world-card card-1">
+      <div class="card-art">
+        <div class="rank">№ 01</div>
+        <div class="symbol">☘</div>
+        <div>
+          <div class="card-title">Middle-earth</div>
+          <div class="card-sub">J.R.R. Tolkien</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank One — The Standard</div>
+      <h3>Middle-earth</h3>
+      <div class="meta"><span>Tolkien Legendarium</span><span>Est. 1937</span></div>
+      <p>The world that defined modern fantasy. From the green hills of the Shire to the burning shadow of Mount Doom, Middle-earth is unmatched in linguistic depth, mythological scope, and emotional weight. Tolkien invented entire languages, genealogies stretching across millennia, and a moral universe so complete it feels less authored than discovered.</p>
+      <div class="quote">"Not all those who wander are lost."</div>
+    </div>
+  </article>
+
+  <!-- 2 -->
+  <article class="world">
+    <div class="world-card card-2">
+      <div class="card-art">
+        <div class="rank">№ 02</div>
+        <div class="symbol">⚡</div>
+        <div>
+          <div class="card-title">The Wizarding World</div>
+          <div class="card-sub">J.K. Rowling</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Two — The Beloved</div>
+      <h3>The Wizarding World</h3>
+      <div class="meta"><span>Harry Potter</span><span>Est. 1997</span></div>
+      <p>A magical Britain hidden in plain sight, where Platform 9¾ slips between two ordinary stations and a school of witchcraft sits within a Scottish castle. Rowling built a world so welcoming it convinced an entire generation that wonder was always one wand-wave away.</p>
+      <div class="quote">"It does not do to dwell on dreams and forget to live."</div>
+    </div>
+  </article>
+
+  <!-- 3 -->
+  <article class="world">
+    <div class="world-card card-3">
+      <div class="card-art">
+        <div class="rank">№ 03</div>
+        <div class="symbol">⚔</div>
+        <div>
+          <div class="card-title">Westeros & Essos</div>
+          <div class="card-sub">George R.R. Martin</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Three — The Brutal</div>
+      <h3>Westeros & Essos</h3>
+      <div class="meta"><span>A Song of Ice and Fire</span><span>Est. 1996</span></div>
+      <p>A continent shaped by feudal politics, dragon-fire, and the long memory of grievance. Martin's world is a brutal mirror of the Wars of the Roses, where honour gets you killed and winter has been coming for a thousand years. Few worlds feel as politically real or as morally cold.</p>
+      <div class="quote">"When you play the game of thrones, you win or you die."</div>
+    </div>
+  </article>
+
+  <!-- 4 -->
+  <article class="world">
+    <div class="world-card card-4">
+      <div class="card-art">
+        <div class="rank">№ 04</div>
+        <div class="symbol">⚙</div>
+        <div>
+          <div class="card-title">Discworld</div>
+          <div class="card-sub">Terry Pratchett</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Four — The Witty</div>
+      <h3>Discworld</h3>
+      <div class="meta"><span>41 Novels</span><span>Est. 1983</span></div>
+      <p>A flat world carried on the back of four elephants standing atop a great turtle swimming through space. Pratchett's Discworld is satire disguised as fantasy: every novel cuts at religion, bureaucracy, journalism, or war while making you laugh out loud. Perhaps the wisest fantasy world ever written.</p>
+      <div class="quote">"It's still magic even if you know how it's done."</div>
+    </div>
+  </article>
+
+  <!-- 5 -->
+  <article class="world">
+    <div class="world-card card-5">
+      <div class="card-art">
+        <div class="rank">№ 05</div>
+        <div class="symbol">𓆗</div>
+        <div>
+          <div class="card-title">Earthsea</div>
+          <div class="card-sub">Ursula K. Le Guin</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Five — The Quiet</div>
+      <h3>Earthsea</h3>
+      <div class="meta"><span>Six Novels</span><span>Est. 1968</span></div>
+      <p>An archipelago world where wizards know that to name a thing truly is to hold power over it. Le Guin's prose has the weight of myth and the precision of poetry. Earthsea trades dragons-and-swords spectacle for something rarer: a world built on language, balance, and the quiet wisdom of paying attention.</p>
+      <div class="quote">"To hear, one must be silent."</div>
+    </div>
+  </article>
+
+  <!-- 6 -->
+  <article class="world">
+    <div class="world-card card-6">
+      <div class="card-art">
+        <div class="rank">№ 06</div>
+        <div class="symbol">✦</div>
+        <div>
+          <div class="card-title">The Cosmere</div>
+          <div class="card-sub">Brandon Sanderson</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Six — The Architectural</div>
+      <h3>The Cosmere</h3>
+      <div class="meta"><span>Multi-Series Universe</span><span>Est. 2005</span></div>
+      <p>A connected universe of planets, gods, and intricately engineered magic systems — Allomancy, Stormlight, BioChromatic Breath. Sanderson's worldbuilding is famous for its scaffolding: every magic has rules, every rule has costs, and every cost matters. A modern landmark of structured fantasy.</p>
+      <div class="quote">"Journey before destination."</div>
+    </div>
+  </article>
+
+  <!-- 7 -->
+  <article class="world">
+    <div class="world-card card-7">
+      <div class="card-art">
+        <div class="rank">№ 07</div>
+        <div class="symbol">🜨</div>
+        <div>
+          <div class="card-title">The Continent</div>
+          <div class="card-sub">Andrzej Sapkowski</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Seven — The Folkloric</div>
+      <h3>The Continent</h3>
+      <div class="meta"><span>The Witcher</span><span>Est. 1986</span></div>
+      <p>A grim land soaked in Slavic folklore, where monsters are often more honest than the men who hire monster-hunters to kill them. Sapkowski's Continent buzzes with bog-witches, strigas, and political rot — a world where every fairy tale comes back wearing teeth.</p>
+      <div class="quote">"Evil is evil. Lesser, greater, middling, makes no difference."</div>
+    </div>
+  </article>
+
+  <!-- 8 -->
+  <article class="world">
+    <div class="world-card card-8">
+      <div class="card-art">
+        <div class="rank">№ 08</div>
+        <div class="symbol">🜍</div>
+        <div>
+          <div class="card-title">The Four Lands</div>
+          <div class="card-sub">Patrick Rothfuss</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Eight — The Lyrical</div>
+      <h3>Temerant</h3>
+      <div class="meta"><span>The Kingkiller Chronicle</span><span>Est. 2007</span></div>
+      <p>The world of Kvothe — a land of universities, sympathy magic, and stories told within stories. Rothfuss writes with a poet's ear, building a world that feels half-remembered from a song you can't quite place. Even unfinished, Temerant casts one of the most enchanting spells in modern fantasy.</p>
+      <div class="quote">"It's like everyone tells a story about themselves inside their own head."</div>
+    </div>
+  </article>
+
+  <!-- 9 -->
+  <article class="world">
+    <div class="world-card card-9">
+      <div class="card-art">
+        <div class="rank">№ 09</div>
+        <div class="symbol">🦁</div>
+        <div>
+          <div class="card-title">Narnia</div>
+          <div class="card-sub">C.S. Lewis</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Nine — The Wonder</div>
+      <h3>Narnia</h3>
+      <div class="meta"><span>Seven Chronicles</span><span>Est. 1950</span></div>
+      <p>A world entered through a wardrobe, where talking beasts walk beside children and a great lion stands at the heart of all things. Narnia is the gateway drug of fantasy — the first secret world many readers ever stepped into, and the one that taught them other doors might be waiting.</p>
+      <div class="quote">"Courage, dear heart."</div>
+    </div>
+  </article>
+
+  <!-- 10 -->
+  <article class="world">
+    <div class="world-card card-10">
+      <div class="card-art">
+        <div class="rank">№ 10</div>
+        <div class="symbol">△</div>
+        <div>
+          <div class="card-title">The Malazan Empire</div>
+          <div class="card-sub">Steven Erikson</div>
+        </div>
+      </div>
+    </div>
+    <div class="world-info">
+      <div class="world-rank">Rank Ten — The Vast</div>
+      <h3>The Malazan World</h3>
+      <div class="meta"><span>Book of the Fallen</span><span>Est. 1999</span></div>
+      <p>A continent-spanning epic of warring empires, ascendant gods, and civilizations measured in hundreds of thousands of years. Erikson, an archaeologist by training, built a world with the depth of deep time itself — a place where reading feels less like fiction and more like exhuming a forgotten history.</p>
+      <div class="quote">"Children are dying. Lords and ladies, the children are dying."</div>
+    </div>
+  </article>
+
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">⚜</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- CRITERIA -->
+<section class="criteria-section">
+  <h2>How We Ranked Them</h2>
+  <p class="subtitle">Four pillars by which a world is judged.</p>
+  <div class="criteria">
+    <div class="criterion">
+      <span class="symbol">🜨</span>
+      <h4>Depth</h4>
+      <p>Geography, history, languages, and culture rendered with care.</p>
+    </div>
+    <div class="criterion">
+      <span class="symbol">✦</span>
+      <h4>Originality</h4>
+      <p>Does the world reinvent the genre or merely decorate it?</p>
+    </div>
+    <div class="criterion">
+      <span class="symbol">⚖</span>
+      <h4>Internal Logic</h4>
+      <p>Magic, politics, and rules that hold together under scrutiny.</p>
+    </div>
+    <div class="criterion">
+      <span class="symbol">❦</span>
+      <h4>Enchantment</h4>
+      <p>The hardest thing to measure — and the only one that truly matters.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-icon">⚜</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <h2>Atlas in Numbers</h2>
+  <div class="stat-grid">
+    <div class="stat"><div class="num">10</div><div class="label">Worlds Ranked</div></div>
+    <div class="stat"><div class="num">90+</div><div class="label">Years of Fantasy</div></div>
+    <div class="stat"><div class="num">1B+</div><div class="label">Books Sold</div></div>
+    <div class="stat"><div class="num">∞</div><div class="label">Imaginations Sparked</div></div>
+  </div>
+</section>
+
+<!-- Ad: second -->
+<div style="max-width:1100px;margin:3rem auto;padding:0 2rem;position:relative;z-index:2;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6275817706281066"
+       data-ad-slot="4628193104"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="closing">"There are no foreign lands. It is the traveler only who is foreign."<br>— Robert Louis Stevenson</p>
+  <div class="author-line">A Reader's Atlas · Curated With Care</div>
+  <div class="small">Worlds beyond worlds.</div>
+</footer>
+
+<script>
+  // Generate floating embers
+  const embersContainer = document.getElementById('embers');
+  for (let i = 0; i < 25; i++) {
+    const ember = document.createElement('div');
+    ember.className = 'ember';
+    ember.style.left = Math.random() * 100 + '%';
+    ember.style.animationDuration = (8 + Math.random() * 12) + 's';
+    ember.style.animationDelay = (Math.random() * 10) + 's';
+    ember.style.opacity = 0.3 + Math.random() * 0.7;
+    embersContainer.appendChild(ember);
+  }
+
+  // Scroll-triggered reveals
+  const worlds = document.querySelectorAll('.world');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  worlds.forEach((w) => observer.observe(w));
+</script>
+
+</body>
+</html>
