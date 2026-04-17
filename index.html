@@ -561,9 +561,46 @@
     .world:nth-child(even) .world-card { order: 0; }
     .world-card { max-width: 280px; margin: 0 auto; }
   }
+
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 6, 19, 0.93);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    backdrop-filter: blur(10px);
+  }
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0.85rem 1rem;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .top-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .top-nav a:hover,
+  .top-nav a.active { color: var(--gold); }
 </style>
 </head>
 <body>
+<nav class="top-nav">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="best-fantasy-books.html">Best Fantasy Books</a></li>
+    <li><a href="enemies-to-lovers-books.html">Best Enemies to Lovers</a></li>
+    <li><a href="best-thriller-books.html">Best Thrillers</a></li>
+  </ul>
+</nav>
 
 <div class="stars"></div>
 <div class="stars2"></div>
