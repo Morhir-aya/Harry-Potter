@@ -529,6 +529,29 @@
     font-size: 0.85rem;
     opacity: 0.7;
   }
+  footer .footer-links {
+    margin-top: 2.25rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  footer .footer-links a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  footer .footer-links a:hover {
+    color: var(--gold-bright);
+    text-shadow: 0 0 12px rgba(245, 215, 110, 0.6);
+  }
+  footer .footer-links span {
+    color: rgba(212, 175, 55, 0.4);
+  }
 
   @media (max-width: 768px) {
     .world, .world:nth-child(even) {
@@ -899,6 +922,15 @@
   <p class="closing">"There are no foreign lands. It is the traveler only who is foreign."<br>— Robert Louis Stevenson</p>
   <div class="author-line">A Reader's Atlas · Curated With Care</div>
   <div class="small">Worlds beyond worlds.</div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/best-fantasy-books.html">Best Fantasy Books</a>
+    <span>·</span>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <span>·</span>
+    <a href="/terms.html">Terms</a>
+    <span>·</span>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </footer>
 
 <script>

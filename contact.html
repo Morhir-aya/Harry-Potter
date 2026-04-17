@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · A Reader's Atlas</title>
+<meta name="description" content="Get in touch with A Reader's Atlas — feedback, collaboration ideas, and corrections welcome.">
+<link rel="canonical" href="https://bestfantasywords.vercel.app/contact.html">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0613; --bg-mid: #14102a; --bg-card: #1a1330;
+    --gold: #d4af37; --gold-bright: #f5d76e;
+    --parchment: #e8dcc4; --text-soft: #b8a888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg-deep); color: var(--parchment);
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.8;
+    min-height: 100vh; display: flex; flex-direction: column;
+    background-image:
+      radial-gradient(ellipse at top, rgba(212, 175, 55, 0.05), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(20, 16, 42, 0.6), transparent);
+  }
+  header { text-align: center; padding: 4rem 2rem 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+  header .eyebrow { font-family: 'Cinzel', serif; color: var(--gold); letter-spacing: 0.4em; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1rem; }
+  header h1 { font-family: 'Cinzel', serif; font-weight: 600; color: var(--gold-bright); font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: 0.05em; }
+  main { flex: 1; max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center; }
+  main p { margin-bottom: 1.75rem; color: var(--parchment); }
+  .email-card {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: rgba(20, 16, 42, 0.5);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+  }
+  .email-card .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 0.5rem;
+  }
+  .email-card a {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-bright);
+    font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: text-shadow 0.3s ease;
+  }
+  .email-card a:hover { text-shadow: 0 0 16px rgba(245, 215, 110, 0.7); }
+  footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(212, 175, 55, 0.2); color: var(--text-soft); font-size: 0.9rem; }
+  footer nav { margin-top: 1rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  footer nav a { color: var(--gold); text-decoration: none; }
+  footer nav a:hover { color: var(--gold-bright); }
+  footer nav span { color: rgba(212,175,55,0.4); }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">A Reader's Atlas</div>
+  <h1>Contact</h1>
+</header>
+
+<main>
+  <p>We love hearing from fellow readers. Whether you have feedback on a ranking, a correction to a date or detail, a fantasy world we ought to read more deeply into, or a collaboration idea — your note is welcome.</p>
+  <p>Send a message to the address below and we will reply when we can. Letters from passionate readers tend to make our week.</p>
+
+  <div class="email-card">
+    <div class="label">Write to us at</div>
+    <a href="mailto:example@email.com">example@email.com</a>
+  </div>
+</main>
+
+<footer>
+  <div>© A Reader's Atlas · Worlds beyond worlds.</div>
+  <nav>
+    <a href="/">Home</a>
+    <span>·</span>
+    <a href="/best-fantasy-books.html">Best Fantasy Books</a>
+    <span>·</span>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <span>·</span>
+    <a href="/terms.html">Terms</a>
+  </nav>
+</footer>
+</body>
+</html>
